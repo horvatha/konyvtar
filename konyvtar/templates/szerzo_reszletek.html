@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block cim %}
+{{ szerzo.nev }}
+{% endblock %}
+
+{% block tartalom %}
+<h1>{{ szerzo.nev }}</h1>
+
+<table class="szerzotablazat">
+    <tr>
+        <td class="tablafejlec">Szerző neve</td>
+        <td>{{ szerzo.nev }}</td>
+    </tr>
+
+    <tr>
+        <td class="tablafejlec">Született</td>
+        <td>{{ szerzo.szuletett }}</td>
+    </tr>
+
+    {% if szerzo.elhunyt %}
+    <tr>
+        <td class="tablafejlec">Elhunyt</td>
+        <td>{{ szerzo.elhunyt }}</td>
+    </tr>
+    {% endif %}
+
+    <tr>
+        <td class="tablafejlec">Nemzetiség</td>
+        <td>{{ szerzo.nemzetiseg  }}</td>
+    </tr>
+
+    <tr>
+        <td class="tablafejlec">Életrajz</td>
+        <td>{{ szerzo.eletrajz  }}</td>
+    </tr>
+
+    <tr>
+        <td class="tablafejlec">Könyvei</td>
+        <td>
+            <ul>
+            {% for k in szerzo.konyv_set.all %}
+                <li><a href="/konyv/{{ k.id }}">{{ k.cim }}</a></li>
+            {% endfor %}
+            </ul>
+        </td>
+    </tr>
+
+</table>
+{% endblock %}

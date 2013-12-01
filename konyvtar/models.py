@@ -15,6 +15,10 @@ class Szerzo(models.Model):
     Szerző
     """
     nev = models.CharField(u'Szerző neve', max_length=100)
+    szuletett = models.DateTimeField(u'Született', blank=True, null=True)
+    elhunyt = models.DateTimeField(u'Elhunyt', blank=True, null=True)
+    nemzetiseg = models.CharField(u'Nemzetiség', max_length=50, blank=True, null=True)
+    eletrajz = models.TextField(u'Életrajz', blank=True, null=True)
 
     def __unicode__(self):
         return self.nev
@@ -26,6 +30,9 @@ class Konyv(models.Model):
     cim = models.CharField(u'Cím', max_length=200)
     leiras = models.CharField(u'Leírás', max_length=500, blank=True, null=True)
     szerzo = models.ManyToManyField(Szerzo)
+    isbn = models.CharField(u'ISBN', max_length=50, blank=True, null=True)
+    megjelenes = models.DateField(u'Megjelenés dátuma', blank=True, null=True)
+    kiado = models.CharField(u'Kiadó', max_length=100, blank=True, null=True)
 
     def __unicode__(self):
         return self.cim

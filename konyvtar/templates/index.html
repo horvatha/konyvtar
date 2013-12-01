@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block cim %}
+Könyvtár.
+{% endblock %}
+
+{% block tartalom %}
+<h1>Könyvtár</h1>
+
+<p>
+Köszöntünk a könyvtárban. Jelenleg <b>{{ szerzokszama }}</b> szerző
+<b>{{ konyvekszama }}</b>
+könyve szerepel az adatbázisban!
+</p>
+
+<h3>Katalógus böngészése</h3>
+<ul>
+    <li><a href="/konyvek">Könyvcímek szerint</a></li>
+    <li><a href="/szerzok">Szerzők szerint</a></li>
+</ul>
+{% endblock %}

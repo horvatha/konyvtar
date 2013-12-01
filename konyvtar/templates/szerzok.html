@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block cim %}
+Szerzők listája
+{% endblock %}
+
+{% block tartalom %}
+<h1>Szerzők</h1>
+
+<ul>
+    {% for szerzo in szerzolista %}
+    <li><a href="/szerzo/{{ szerzo.id }}">{{ szerzo.nev }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

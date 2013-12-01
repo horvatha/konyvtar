@@ -1,0 +1,78 @@
+body {
+    font-family: "Tahoma", sans-serif, helvetica;
+    background-image: url("lib.jpeg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    /*border: 0;
+    padding: 0;
+    margin: 0;
+    color: #080808;*/
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#navbar {
+    position: fixed;
+    margin-top: -14px;
+    margin-left: -137px;
+    background-color: rgba(255,255,255,.8);
+    width: 128px;
+
+}
+
+#navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#navbar ul li {
+    margin: 0;
+    padding: 8px 0;
+    display: block;
+    text-align: center;
+}
+
+#navbar ul li a img {
+    width: 64px;
+    height: 64px;
+}
+
+#main {
+    background-color: rgba(255,255,255,.8);
+    padding: 14px 9px;
+    color: #080808;
+    width: 720px;
+    margin: 0 auto;
+}
+
+#footer {
+    font-size: 75%;
+}
+
+#konyvlista li {
+    margin-bottom: 14px;
+}
+
+.konyvcim {
+    font-size: 150%;
+}
+
+.szerzotablazat {
+    display: block;
+}
+
+.szerzotablazat tr td {
+    padding: 8px;
+}
+
+.tablafejlec {
+    font-weight: bold;
+    font-size: 120%;
+}

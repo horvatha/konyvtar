@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html lang="hu">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block cim %}{% endblock %}</title>
+        <link href="{% static "stilus.css" %}" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <div id="main">
+
+        <div id="navbar">
+            <ul>
+                <li><a href="/"><img src="{% static "home.png" %}" alt="Kezdőlap" /><br />Kezdőlap</a></li>
+                <li><a href="/konyvek"><img src="{% static "konyv.png" %}" alt="Könyvek" /><br />Könyvek</a></li>
+                <li><a href="/szerzok"><img src="{% static "szerzo.png" %}" alt="Szerzők" /><br />Szerzők</a></li>
+                <li><a href="/admin"><img src="{% static "admin.png" %}" alt="Adminisztráció" /><br />Adminisztráció</a></li>
+            </ul>
+        </div>
+
+        <div id="content">
+            {% block tartalom %}{% endblock %}
+        </div>
+
+        <div id="footer">
+            Könyvtár program &#8211; Powered by <a
+                href="http://www.djangoproject.com"
+                rel="external">Django</a> and <a
+                href="http://www.python.org" rel="external">Python</a>.
+            Ikonszett: <a
+                href="https://www.iconfinder.com/iconsets/pittogrammi"
+                rel="external">Pittogrammi</a><br />
+            Készítette: Fogas László Dániel és Somogyi Zsolt
+        </div>
+
+        </div>
+    </body>
+</html>

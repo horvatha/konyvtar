@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block cim %}
+Könyvek listája
+{% endblock %}
+
+{% block tartalom %}
+<h1>Könyvek</h1>
+
+<ul id="konyvlista">
+{% for k in konyvlista %}
+    <li>
+        <a href="/konyv/{{ k.id }}" class="konyvcim">{{ k.cim }}</a><br />
+         {% for sz in k.szerzo.all %}
+            <a href="/szerzo/{{ sz.id }}">{{ sz.nev }}</a>, 
+         {% endfor %}
+     </li>
+     {% endfor %}
+ </ul>
+
+{% endblock %}

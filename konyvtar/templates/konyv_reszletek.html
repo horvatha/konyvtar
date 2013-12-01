@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block cim %}
+{{ konyv.cim }}
+{% endblock %}
+
+{% block tartalom %}
+<h1>{{ konyv.cim }}</h1>
+
+<table class="szerzotablazat">
+    <tr>
+        <td class="tablafejlec">Könyv címe</td>
+        <td>{{ konyv.cim }}</td>
+    </tr>
+
+    <tr>
+        <td class="tablafejlec">Szerző(k)</td>
+        <td>
+            <ul>
+                {% for sz in konyv.szerzo.all %}
+                <li><a href="/szerzo/{{ sz.id }}">{{ sz.nev }}</a></li>
+                {% endfor %}
+            </ul>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="tablafejlec">Fülszöveg</td>
+        <td>{{ konyv.leiras }}</td>
+    </tr>
+
+    <tr>
+        <td class="tablafejlec">Megjelenés dátuma</td>
+        <td>{{ konyv.megjelenes }}</td>
+    </tr>
+
+    <tr>
+        <td class="tablafejlec">ISBN</td>
+        <td>{{ konyv.isbn }}</td>
+    </tr>
+</table>
+{% endblock %}
